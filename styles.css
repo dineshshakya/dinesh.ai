@@ -202,6 +202,38 @@ strong { color: var(--text); }
 
 .fine-print { color: var(--muted); font-size: 0.9rem; margin-top: 1.5rem; }
 
+/* My Peace */
+.peace-figure { margin: 0 0 2rem; }
+.peace-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.peace-figure figcaption {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  text-align: right;
+}
+.peace-cols { display: grid; gap: 1.25rem; margin: 0 0 2.75rem; }
+.peace-col {
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.4rem;
+}
+.peace-col h3 { margin: 0 0 0.75rem; font-size: 1.15rem; }
+.peace-in h3 { color: var(--accent); }
+.peace-out h3 { color: var(--muted); }
+.peace-col ul { margin: 0; padding-left: 1.25rem; color: var(--muted); }
+.peace-col li { margin-bottom: 0.4rem; }
+.peace-h { font-size: 1.3rem; margin: 0 0 1rem; letter-spacing: -0.01em; }
+.peace-list { margin: 0 0 0.5rem; padding-left: 1.5rem; }
+.peace-list li { margin-bottom: 0.8rem; max-width: 38rem; }
+.peace-list li::marker { color: var(--accent); font-weight: 800; }
+
 .site-footer {
   border-top: 1px solid var(--border);
   margin-top: 2rem;
@@ -214,6 +246,7 @@ strong { color: var(--text); }
 /* Larger screens: two-column cards */
 @media (min-width: 42rem) {
   .cards { grid-template-columns: 1fr 1fr; }
+  .peace-cols { grid-template-columns: 1fr 1fr; }
   .nav-links { gap: 0.5rem; }
   .nav-links a { padding: 0.65rem 1rem; }
 }
