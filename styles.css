@@ -184,6 +184,18 @@ strong { color: var(--text); }
   padding: 1.5rem;
 }
 .card h3 { margin: 0 0 0.5rem; font-size: 1.2rem; }
+.badge {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
 .card p { color: var(--muted); margin: 0 0 1rem; }
 .card a { color: var(--accent); font-weight: 700; text-decoration: none; }
 .card a:hover { text-decoration: underline; }
