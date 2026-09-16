@@ -199,6 +199,18 @@ strong { color: var(--text); }
 .card p { color: var(--muted); margin: 0 0 1rem; }
 .card a { color: var(--accent); font-weight: 700; text-decoration: none; }
 .card a:hover { text-decoration: underline; }
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+}
+.voice-clip { margin: 0 0 1rem; }
+.voice-clip:last-child { margin-bottom: 0; }
+.voice-clip figcaption { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.35rem; }
+.voice-clip audio { width: 100%; }
 
 .fine-print { color: var(--muted); font-size: 0.9rem; margin-top: 1.5rem; }
 
