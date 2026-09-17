@@ -197,6 +197,15 @@ strong { color: var(--text); }
   text-transform: uppercase;
 }
 .card p { color: var(--muted); margin: 0 0 1rem; }
+.card blockquote {
+  margin: 0 0 1.25rem;
+  padding: 0.9rem 1rem 0.9rem 1.1rem;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-soft);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.card blockquote p { color: var(--text); font-style: italic; margin: 0 0 0.5rem; }
+.card blockquote cite { color: var(--muted); font-style: normal; font-size: 0.9rem; }
 .card a { color: var(--accent); font-weight: 700; text-decoration: none; }
 .card a:hover { text-decoration: underline; }
 .card img {
