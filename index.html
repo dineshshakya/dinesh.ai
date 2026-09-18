@@ -125,6 +125,53 @@
         <p><strong>What actually moves stocks now.</strong> The hike was 93% priced in, so the initial reaction was muted — markets stayed steady. What matters is the path: the Fed&rsquo;s projections point to another hike this year, so every CPI report and oil price swing counts double. The risk Madowitz flags is overtightening — squeeze too hard and growth, then earnings, take the hit.</p>
         <p class="fine-print">Sources: Fed statement Sep 16, 2026; CNBC. Educational only — not financial advice.</p>
       </article>
+      <article class="card">
+        <p class="badge">Sep 18, 2026 · CFA study note</p>
+        <h3>CAPM, Sharpe, margin &amp; NAV — my portfolio formula sheet, worked out</h3>
+        <p>These are my handwritten CFA notes on portfolio management: how to measure risk and return, price risk with CAPM, mix two risky assets, buy on margin, and value a mutual fund. Every formula below is worked through with a number — including one arithmetic slip in my own notes, corrected here.</p>
+        <h4>1. Measuring risk and return</h4>
+        <p><strong>Standard deviation is the square root of variance.</strong> Correlation (ρ) tells you how two assets move together — and it is where diversification comes from:</p>
+        <span class="formula">σ = √σ² &nbsp;&nbsp;·&nbsp;&nbsp; σ² = w₁²σ₁² + w₂²σ₂² + 2w₁w₂σ₁σ₂ρ</span>
+        <p><strong>Risk premium and excess return are the same idea:</strong> return above the risk-free rate. Everything in portfolio theory is built on it.</p>
+        <span class="formula">Risk premium = E(R<sub>p</sub>) − r<sub>f</sub> &nbsp;&nbsp;·&nbsp;&nbsp; Excess return = r<sub>i</sub> − r<sub>f</sub></span>
+        <h4>2. CAPM and alpha</h4>
+        <p><strong>CAPM says expected return is the risk-free rate plus beta times the market premium.</strong> Beta is a weighted average of the portfolio's parts: β = 1 means market risk, β &gt; 1 is aggressive, β &lt; 1 is defensive.</p>
+        <span class="formula">E(R<sub>p</sub>) = r<sub>f</sub> + β<sub>p</sub>(r<sub>m</sub> − r<sub>f</sub>) &nbsp;&nbsp;·&nbsp;&nbsp; β<sub>p</sub> = w₁β₁ + w₂β₂</span>
+        <p><strong>Alpha is actual return minus the CAPM return</strong> — what you earned beyond what your risk deserved. Positive alpha means active outperformance; zero means passive; negative means you lagged.</p>
+        <span class="formula">α = E(R<sub>i</sub>) − CAPM</span>
+        <p><strong>Worked example 1.</strong> A security returns 12%. Risk-free rate is 5%, beta is 0.8, market premium is 10%. CAPM = 5% + 0.8 × 10% = 13%. Alpha = 12% − 13% = <strong>−1%</strong>. The security underperformed its risk-adjusted benchmark by one point.</p>
+        <h4>3. The best mix of two risky assets</h4>
+        <p><strong>There is a formula for the optimal risky portfolio</strong> — the mix of (say) a stock and a bond that maximizes the Sharpe ratio. R<sub>b</sub> and R<sub>s</sub> are excess returns:</p>
+        <span class="formula">w<sub>b</sub> = [R<sub>b</sub>σ<sub>s</sub>² − R<sub>s</sub>σ<sub>b</sub>σ<sub>s</sub>ρ] / [R<sub>b</sub>σ<sub>b</sub>² + R<sub>s</sub>σ<sub>s</sub>² − (R<sub>b</sub>+R<sub>s</sub>)σ<sub>b</sub>σ<sub>s</sub>ρ]</span>
+        <p><strong>Worked example 2.</strong> Stock: expected return 35%, σ 25%. Bond: expected return 15%, σ 10%. Correlation 30%, risk-free 5%. Excess returns: R<sub>b</sub> = 10%, R<sub>s</sub> = 30%.</p>
+        <ol class="worked">
+          <li>Optimal weights: w<sub>b</sub> = 64%, w<sub>s</sub> = 36%.</li>
+          <li>Portfolio return = 0.36 × 35% + 0.64 × 15% = <strong>22.2%</strong>.</li>
+          <li>Portfolio variance = 0.36² × 0.25² + 0.64² × 0.1² + 2 × 0.64 × 0.36 × 0.25 × 0.1 × 0.3 = 0.015652, so σ = <strong>12.5%</strong>.</li>
+          <li>Sharpe ratio = (22.2% − 5%) / 12.5% = <strong>1.38</strong>.</li>
+        </ol>
+        <p><strong>The Sharpe ratio is the slope of the Capital Allocation Line (CAL)</strong> — return per unit of risk. The tangent point where the CAL touches the efficient frontier is this optimal portfolio: 22.2% expected return at 12.5% risk.</p>
+        <h4>4. R² — how much risk is the market's fault</h4>
+        <p><strong>R-squared splits total risk into two buckets:</strong> systematic risk (the market's, measured by β²σ<sub>m</sub>²/σ<sub>p</sub>² = ρ²) and idiosyncratic risk (1 − R²) — the part diversification can wash away.</p>
+        <span class="formula">R² = β<sub>p</sub>²σ<sub>m</sub>² / σ<sub>p</sub>² &nbsp;&nbsp;·&nbsp;&nbsp; Idiosyncratic risk = 1 − R²</span>
+        <h4>5. Buying on margin — leverage cuts both ways</h4>
+        <p><strong>Margin is equity divided by assets.</strong> Buy $15,000 of stock with $7,500 borrowed at 10% and $7,500 of your own, and your initial margin is (15,000 − 7,500 − 750) / 15,000 = <strong>45%</strong>. (My handwritten notes say 95% here — an arithmetic slip; 6,750 / 15,000 is 45%.)</p>
+        <span class="formula">Margin = Equity / Assets = (Assets − debt) / Assets</span>
+        <p><strong>Worked example 3.</strong> Maintenance margin is 30%.</p>
+        <ol class="worked">
+          <li><strong>Stock rises to $180.</strong> Leveraged return = (18,000 − 15,000 − 750) / 7,500 = <strong>30%</strong>. Unleveraged it would be (18,000 − 15,000) / 15,000 = <strong>20%</strong>. Leverage amplified the gain.</li>
+          <li><strong>Stock falls to $120.</strong> Leveraged return = (12,000 − 15,000 − 750) / 7,500 = <strong>−50%</strong> vs −20% unleveraged. Leverage amplified the loss — more than doubling it.</li>
+          <li>Margin after the fall = (12,000 − 7,500 − 750) / 12,000 = <strong>31.25%</strong> — still above the 30% maintenance level, so no margin call. Barely.</li>
+        </ol>
+        <span class="formula">R<sub>leveraged</sub> = (gain/loss − interest) / investment &nbsp;&nbsp;·&nbsp;&nbsp; R<sub>unleveraged</sub> = gain/loss / investment</span>
+        <h4>6. Mutual fund NAV — and why new investors don't dilute you</h4>
+        <p><strong>Net asset value is what one fund share is worth:</strong> assets minus liabilities, divided by shares outstanding.</p>
+        <span class="formula">NAV = (Assets − liabilities) / shares outstanding</span>
+        <p><strong>Worked example 4.</strong> Assets = 10,000 × 100 + 50,000 × 85 + 40,000 × 60 = 7,650,000. Liabilities = 350,000 + 100,000 = 450,000. Shares outstanding = 100,000. NAV = (7,650,000 − 450,000) / 100,000 = <strong>72</strong>.</p>
+        <p><strong>Worked example 5 — the no-dilution proof.</strong> A fund holds 500m in assets, owes 100m, has 40m shares: NAV = (500 − 100) / 40 = <strong>10</strong>. A new investor buys 5m shares at NAV, paying 50m. Assets become 550m, shares become 45m: NAV = (550 − 100) / 45 = <strong>10</strong>. Because newcomers buy at NAV, existing holders are untouched — that is the whole point of daily NAV pricing.</p>
+        <p><strong>Fund return</strong> over a period, net of expenses: (Assets<sub>end</sub> − Assets<sub>beg</sub> − expenses) / Assets<sub>beg</sub>.</p>
+        <p class="fine-print">Study notes for CFA prep, transcribed from my handwritten sheets — not financial advice.</p>
+      </article>
     </div>
     <p class="fine-print">Briefs land in my chat only on meaningful moves — quiet days stay quiet. This is analysis for learning, not financial advice.</p>
   </section>
