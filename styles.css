@@ -284,6 +284,9 @@ strong { color: var(--text); }
 /* Larger screens: two-column cards */
 @media (min-width: 42rem) {
   .cards { grid-template-columns: 1fr 1fr; }
+  /* Finance: the two short watch cards pair up; long article cards run
+     full-width so one column can't run far longer than the other */
+  #finance .card-article { grid-column: 1 / -1; }
   .peace-cols { grid-template-columns: 1fr 1fr; }
   .nav-links { gap: 0.5rem; }
   .nav-links a { padding: 0.65rem 1rem; }
